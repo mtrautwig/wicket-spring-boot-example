@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.7.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.objenesis:objenesis:2.6'
+	implementation 'org.apache.wicket:wicket-core:8.5.0'
+	implementation 'org.apache.wicket:wicket-spring:8.5.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+sourceSets {
+	main {
+		java {
+			resources {
+				srcDirs('src/main/resources', 'src/main/java')
+			}
+		}
+	}
+}
